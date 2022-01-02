@@ -1,0 +1,10 @@
+.posts {
+  padding: 2% 3%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: centers;
+}

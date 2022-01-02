@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.item {
+  list-style-type: none;
+}
+
+.btn {
+  padding: 5px;
+  border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #222;
+    color: #fff;
+    transition: 0.25s ease all;
+  }
+}
