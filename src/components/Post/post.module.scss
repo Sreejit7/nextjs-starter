@@ -6,3 +6,17 @@
   }
 }
 
+.title {
+  margin: 1vh 0 2vh 0;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: rgb(61, 89, 180);
+    transition: 0.25s all ease;
+  }
+}
+
+.header {
+  color: rgb(92, 91, 91);
+}

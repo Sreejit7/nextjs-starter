@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import Card from "../src/components/Card";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
@@ -13,15 +14,19 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        
-            
+        <h1 className={styles.title}>List of Pages in this project</h1>
+        <section className={styles.pages}>
+          <Card
+            title="Posts"
+            content="Posts page having a bunch of posts posted by different users"
+            link="/posts"
+          />
+        </section>
       </main>
 
-      <footer className={styles.footer}>
-        
-      </footer>
+      <footer className={styles.footer}></footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

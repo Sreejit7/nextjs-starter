@@ -1,11 +1,10 @@
 import { GetStaticProps, NextPage } from "next";
-import { ParsedUrlQuery } from "querystring";
-import { useEffect, useState } from "react";
-import Pagination from "../src/components/Pagination";
-import Post from "../src/components/Post";
-import { PostType } from "../src/components/Post/post.model";
-import { usePaginate } from "../src/hooks/usePaginate";
-import styles from "../styles/posts.module.css";
+import { useState } from "react";
+import Pagination from "../../src/components/Pagination";
+import Post from "../../src/components/Post";
+import { PostType } from "../../src/components/Post/post.model";
+import { usePaginate } from "../../src/hooks/usePaginate";
+import styles from "../../styles/posts.module.css";
 
 type Props = {
   posts: PostType[];
@@ -28,13 +27,13 @@ const Posts: NextPage<Props> = ({ posts }: Props) => {
   );
 
   return (
-    <main className={styles.posts}>
+    <main className={styles.main}>
       <ul className={styles.list}>
         {posts.slice(start, end).map((post) => (
           <Post key={post.id} post={post} />
         ))}
       </ul>
-      <footer>
+      <footer className={styles.footer}>
         <Pagination pages={pages} paginate={(page) => setCurrentPage(page)} />
       </footer>
     </main>

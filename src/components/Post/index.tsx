@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PostType } from "./post.model";
 import styles from "./post.module.scss";
 
@@ -9,9 +10,13 @@ const Post = ({ post }: Props) => {
   return (
     <article className={styles.post}>
       <header>
-        <small>Post #{id} by @user{userId}</small>
+        <small className={styles.header}>
+          Post #{id} by @user{userId}
+        </small>
       </header>
-      <h4>{title}</h4>
+      <Link passHref href={`/posts/${id}`}>
+        <h4 className={styles.title}>{title}</h4>
+      </Link>
       <p className={styles["post-body"]}>{body}</p>
     </article>
   );
