@@ -1,16 +1,14 @@
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { useState } from "react";
 import Pagination from "../../src/components/Pagination";
 import Post from "../../src/components/Post";
 import { PostType } from "../../src/components/Post/post.model";
 import { usePaginate } from "../../src/hooks/usePaginate";
-import styles from "../../styles/posts.module.css";
+import styles from "../../styles/posts.module.scss";
 
-type Props = {
-  posts: PostType[];
-};
-
-const Posts: NextPage<Props> = ({ posts }: Props) => {
+const Posts: NextPage = ({
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [currentPage, setCurrentPage] = useState(1);
   const postPerPage = 10;
   let pages = posts.length / postPerPage;
@@ -29,7 +27,7 @@ const Posts: NextPage<Props> = ({ posts }: Props) => {
   return (
     <main className={styles.main}>
       <ul className={styles.list}>
-        {posts.slice(start, end).map((post) => (
+        {posts.slice(start, end).map((post: PostType) => (
           <Post key={post.id} post={post} />
         ))}
       </ul>
@@ -40,9 +38,9 @@ const Posts: NextPage<Props> = ({ posts }: Props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await response.json();
+  const posts: PostType[] = await response.json();
   return {
     props: { posts },
   };

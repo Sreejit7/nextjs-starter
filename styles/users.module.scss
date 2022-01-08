@@ -1,0 +1,38 @@
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vh 2vw;
+}
+
+.title {
+  margin-bottom: 3vh;
+  font-size: 2rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+
+  &-name {
+    font-size: 2rem;
+  }
+
+  &-username {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 10px;
+  }
+
+  &-email {
+    font-weight: 600;
+    color: rgb(50, 50, 187);
+    margin-left: 5px;
+  }
+}
+
+.content {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
