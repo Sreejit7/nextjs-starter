@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Card from "../src/components/Card";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +19,11 @@ const Home: NextPage = () => {
             title="Posts"
             content="Posts page having a bunch of posts posted by different users"
             link="/posts"
+          />
+          <Card
+            title="Users"
+            content="Users page having a list of users and their details"
+            link="/users"
           />
         </section>
       </main>

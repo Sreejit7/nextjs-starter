@@ -1,0 +1,16 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  background-color: rgb(181, 226, 241);
+  border-radius: 4px;
+  padding: 12px 14px;
+  width: 260px;
+  cursor: pointer;
+  transition: 0.5s all ease;
+
+  &:hover {
+    transform: translateX(6px);
+    box-shadow: -10px 0px 0px 0px #333;
+  }
+}
