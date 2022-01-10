@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { CommentType } from "../../src/components/Post/post.model";
 import { fetcher } from "../../src/helpers/fetcher";
-import styles from "../../styles/posts.module.css";
+import styles from "../../styles/posts.module.scss";
 
 const SinglePost: NextPage = () => {
   const {
