@@ -19,7 +19,7 @@ const SingleUser = ({
   albums,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { isFallback } = useRouter();
-  const firstName = details.name.split(" ")[0];
+  const firstName = details ? details.name.split(" ")[0] : "";
 
   if (isFallback) {
     return (
@@ -41,9 +41,15 @@ const SingleUser = ({
       </section>
       <section className={styles.content}>
         <h2>User Activity</h2>
-        <span>{firstName} has posted {posts.length} times.</span>
-        <span>{firstName} is currently working on {todos.length} tasks.</span>
-        <span>{firstName} has uploaded {albums.length} albums.</span>
+        <span>
+          {firstName} has posted {posts.length} times.
+        </span>
+        <span>
+          {firstName} is currently working on {todos.length} tasks.
+        </span>
+        <span>
+          {firstName} has uploaded {albums.length} albums.
+        </span>
       </section>
     </main>
   );
