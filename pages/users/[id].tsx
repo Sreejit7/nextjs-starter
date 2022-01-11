@@ -33,11 +33,11 @@ const SingleUser = ({
     <main className="page">
       {details && (
         <section className={styles.details}>
-          <h1 className={styles["details-name"]}>{details.name}</h1>
-          <span className={styles["details-username"]}>@{details.username}</span>
+          <h1 className={styles["details-name"]}>{details?.name}</h1>
+          <span className={styles["details-username"]}>@{details?.username}</span>
           <span>
             Write to:
-            <span className={styles["details-email"]}>{details.email}</span>
+            <span className={styles["details-email"]}>{details?.email}</span>
           </span>
         </section>
       )}
