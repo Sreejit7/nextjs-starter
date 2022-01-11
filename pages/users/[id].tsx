@@ -19,7 +19,7 @@ const SingleUser = ({
   albums,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { isFallback } = useRouter();
-  const firstName = details.name.split(" ")[0];
+  const firstName = details? details.name.split(" ")[0]: "";
 
   if (isFallback) {
     return (
@@ -31,14 +31,16 @@ const SingleUser = ({
 
   return (
     <main className="page">
-      <section className={styles.details}>
-        <h1 className={styles["details-name"]}>{details.name}</h1>
-        <span className={styles["details-username"]}>@{details.username}</span>
-        <span>
-          Write to:
-          <span className={styles["details-email"]}>{details.email}</span>
-        </span>
-      </section>
+      {details && (
+        <section className={styles.details}>
+          <h1 className={styles["details-name"]}>{details?.name}</h1>
+          <span className={styles["details-username"]}>@{details?.username}</span>
+          <span>
+            Write to:
+            <span className={styles["details-email"]}>{details?.email}</span>
+          </span>
+        </section>
+      )}
       <section className={styles.content}>
         <h2>User Activity</h2>
         <span>{firstName} has posted {posts.length} times.</span>
